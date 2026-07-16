@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Primeiro Site Interativo</title>
+    
+    <!-- CSS: Controla o visual e o design da página -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            transition: background-color 0.5s ease;
+        }
+
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .contador {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #007bff;
+            margin: 20px 0;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HTML: Define a estrutura e o conteúdo da página -->
+    <div class="container">
+        <h1>Contador Interativo</h1>
+        <p>Clique no botão para interagir com a página</p>
+        <div class="contador" id="numero-contador">0</div>
+        <button id="botao-clique">Clique Aqui</button>
+    </div>
+
+    <!-- JavaScript: Controla o comportamento e as ações -->
+    <script>
+        // 1. Seleciona os elementos da página que vamos usar
+        const botao = document.getElementById('botao-clique');
+        const displayContador = document.getElementById('numero-contador');
+        const corpoPagina = document.body;
+
+        // 2. Cria uma variável para guardar o valor do contador
+        let cliques = 0;
+
+        // 3. Lista de cores para mudar o fundo aleatoriamente
+        const cores = ['#ffebee', '#e8f5e9', '#e3f2fd', '#fff3e0', '#f3e5f5'];
+
+        // 4. Adiciona um evento de clique ao botão
+        botao.addEventListener('click', () => {
+            // Aumenta o contador em 1
+            cliques++;
+            
+            // Atualiza o texto na tela
+            displayContador.textContent = cliques;
+
+            // Escolhe uma cor da lista baseada no número de cliques
+            const novaCor = cores[cliques % cores.length];
+            corpoPagina.style.backgroundColor = novaCor;
+        });
+    </script>
+
+</body>
+</html>
