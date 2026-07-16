@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Botão CSS</title>
+
+    <style>
+        /* Centraliza o conteúdo na tela */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f2f5;
+        }
+
+        /* Estilização do botão */
+        .botao-legal {
+            background-color: #4CAF50; /* Cor verde */
+            color: white; /* Cor do texto */
+            padding: 15px 32px; /* Tamanho interno */
+            font-size: 18px; /* Tamanho da letra */
+            font-weight: bold;
+            border: none; /* Remove a borda padrão */
+            border-radius: 8px; /* Cantos arredondados */
+            cursor: cursor; /* Mostra a mãozinha ao passar o mouse */
+            transition: 0.3s; /* Suaviza o efeito ao passar o mouse */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra inicial */
+        }
+
+        /* Efeito quando o mouse passa por cima do botão */
+        .botao-legal:hover {
+            background-color: #45a049; /* Verde um pouco mais escuro */
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Sombra maior */
+            transform: translateY(-2px); /* Levanta o botão um pouco */
+        }
+
+        /* Efeito quando o botão é clicado */
+        .botao-legal:active {
+            transform: translateY(0); /* Volta para a posição normal */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <button class="botao-legal">Clique Aqui</button>
+
+</body>
+</html>
